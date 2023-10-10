@@ -1,0 +1,27 @@
+<div *ngFor="let device of devices" class="flex-container">
+  <mat-card>
+    <mat-card-header class="flex-container">
+      <mat-card-title>{{ device.name }}</mat-card-title>
+      <mat-card-subtitle>{{ device.serialNumber }}</mat-card-subtitle>
+      <div class="vertical-container">
+        <button  mat-raised-button color="accent">Add Point</button>
+        <button mat-raised-button color="warn">Delete Device</button>
+      </div>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="flex-container">
+      <div class="vertical-container">
+        <p>
+          {{ device.points[0].name }}
+        </p>
+        <p>
+          {{ device.points[0].dataType }}: {{ device.points[0].value }}
+        </p>
+      </div>
+      <div class="vertical-container">
+        <button mat-raised-button color="primary">Update Point</button>
+        <button mat-raised-button color="warn">Clear Point</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
